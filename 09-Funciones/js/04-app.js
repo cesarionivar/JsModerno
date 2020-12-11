@@ -5,3 +5,8 @@ console.log( parseInt(numero2) ); // Esto es una función
 
 console.log( numero1.toString()); // Esto es un método
 
+function sumar() {
+    console.log( 2 + 2);
+}
+
+sumar();
