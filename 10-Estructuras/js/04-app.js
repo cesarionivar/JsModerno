@@ -1,9 +1,9 @@
 // Operador mayor que y menor que
 
-const dinero = 1000;
+const dinero = 100;
 const totalAPagar = 500;
 const tarjeta = true;
-const cheque = true;
+const cheque = false;
 
 
 if(dinero >= totalAPagar) {
