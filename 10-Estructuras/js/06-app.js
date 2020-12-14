@@ -1,25 +1,19 @@
-// Switch case
+const usuario = true;
+const puedePagar = false;
 
-const metodoPago = 'efectivo';
-
-switch (metodoPago) {
-    case 'efectivo':
-        pagar();
-        break;
+if (usuario && puedePagar) {
     
-    case 'tarjeta':
-        console.log(`Pagaste con ${metodoPago}`);
-        break;
-        
-    case 'cheque':
-        console.log(`Pagaste con ${metodoPago}`);
-        break;
+    console.log('Si puedes comprar');
 
-    default:
-        console.log(`Aún no has seleccionado un método de pago o método de pago no soportado.`);
-        break;
-}
+} else if(!puedePagar && !usuario) {
 
-function pagar() {
-    console.log('Pagando...');
-}
+    console.log('No, no puedes comprar');
+} 
+else if(!usuario)  {
+
+    console.log('Inicia sesión o saca una cuenta');
+
+} else if(!puedePagar)  {
+
+    console.log('Fondos insuficientes');
+} 
