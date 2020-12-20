@@ -5,7 +5,7 @@ const minimo = document.querySelector('#minimo');
 const maximo = document.querySelector('#maximo');
 const puertas = document.querySelector('#puertas');
 const transmision = document.querySelector('#transmision');
-const color = document.querySelector('#transmision');
+const color = document.querySelector('#color');
 
 // Contenedor para los resultados
 const resultado = document.querySelector('#resultado');
@@ -120,27 +120,77 @@ function llenarSelect() {
 // Función que filtra en base a la búsqueda
 function filtrarAutos() {
     
-    const resultado = autos.filter( filtrarMarca ).filter( filtrarYear );
+    const resultado = autos.filter( filtrarMarca ).filter( filtrarYear ).filter( filtrarMinimo ).filter( filtrarMaximo ).filter( filtrarPuertas ).filter( filtrarTransmision ).filter( filtrarColor );
 
     // console.log(resultado);
     mostrarAutos(resultado);
     
 }
 
+// Destructurar objeto datos Busqueda
+
 
 function filtrarMarca(auto) {
     const { marca } = datosBusqueda;
+
     if(marca) {
         return auto.marca === marca;
     }
     return auto;
 }
 
-function filtrarYear(auto) {
-    const { year } = datosBusqueda;
-    
+function filtrarYear(auto) {  
+    const { year } = datosBusqueda; 
+
     if(year) {
         return auto.year === year;
+    }
+    return auto;
+}
+
+function filtrarMinimo(auto) {   
+    const { minimo } = datosBusqueda;
+
+    if(minimo) {
+        return auto.precio >= minimo;
+    }
+    return auto;
+}
+
+function filtrarMaximo(auto) {  
+    const { maximo } = datosBusqueda;   
+
+    if(maximo) {
+        return auto.precio <= maximo;
+    }
+    return auto;
+}
+
+function filtrarPuertas(auto) {
+    const { puertas } = datosBusqueda;
+
+    if(puertas) {
+        return auto.puertas === puertas;
+    }
+
+    return auto;
+}
+
+function filtrarTransmision(auto) {
+    const { transmision } = datosBusqueda;
+
+    if(transmision) {
+        return auto.transmision === transmision;
+    }
+
+    return auto;
+}
+
+function filtrarColor(auto) {
+    const { color } = datosBusqueda;
+
+    if(color) {
+        return auto.color === color;
     }
     return auto;
 }
