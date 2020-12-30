@@ -90,7 +90,9 @@ class UI {
             `;
 
             // Boton para eliminar esta cita
-
+            const btnEliminar = document.createElement('button');
+            btnEliminar.classList.add('btn', 'btndanger', 'mr-2');
+            
             // Agregar los parrafos al divCita
             divCita.appendChild(mascotaParrafo);
             divCita.appendChild(propietarioParrafo);
