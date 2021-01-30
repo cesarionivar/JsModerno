@@ -27,6 +27,11 @@ export class Cliente {
 }
 
 
+export default function nuevaFuncion() {
+    console.log('Este es el export default');
+}
+
+
 
 
 
