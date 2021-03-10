@@ -16,11 +16,15 @@ function validarBusqueda(e) {
         return;
     }
 
-    consultarAPI();
+    consultarAPI(busqueda);
 }
 
-function consultarAPI() {
-    
+function consultarAPI(busqueda) {
+    const githubUrl = `https://jobs.github.com/positions.json?search=${busqueda}`;
+    const url = `https://api.allorigins.win/get?url=${encodeURIComponent(githubUrl)}`;
+
+    axios.get(url)
+        .then(respuesta => mostrarVacantes(JSON.parse(respuesta.data.contents)));
 }
 
 function mostrarMensaje(mensaje) {
@@ -40,3 +44,27 @@ function mostrarMensaje(mensaje) {
     }
 }
 
+function mostrarVacantes(vacantes) {
+    while(resultado.firstChild) {
+        resultado.removeChild(resultado.firstChild);
+    }
+
+    if(vacantes.length > 0) {
+        resultado.classList.add('grid');
+
+        vacantes.forEach(vacante => {
+            const {company, title, type, url, description} = vacante;
+
+            resultado.innerHTML += `
+            <div class="shadow bg-white p-6 rounded">
+                <h2 class="text-2xl font-light mb-4">${title}</h2>
+                <p class="font-bold uppercase">Compañia:  <span class="font-light normal-case">${company} </span></p>
+                <p class="font-bold uppercase">Tipo de Contrato:   <span class="font-light normal-case">${type} </span></p>
+                <a class="bg-teal-500 max-w-lg mx-auto mt-3 rounded p-2 block uppercase font-xl font-bold text-white text-center" href="${url}">Ver Vacante</a>
+            </div>
+            `;
+        });
+    } else {
+        
+    }
+}
