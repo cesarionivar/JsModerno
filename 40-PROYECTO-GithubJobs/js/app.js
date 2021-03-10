@@ -65,6 +65,10 @@ function mostrarVacantes(vacantes) {
             `;
         });
     } else {
-        
+        const noResultado = document.createElement('p');
+        noResultado.classList.add('text-center', 'mt-10', 'text-gray-600', 'w-full');
+        noResultado.textContent = 'No hay vacantes, intenta con otro término de búsqueda';
+        resultado.classList.remove('grid');
+        resultado.appendChild(noResultado);
     }
 }
