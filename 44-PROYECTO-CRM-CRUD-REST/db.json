@@ -13,20 +13,6 @@
       "telefono": "80239543421",
       "empresa": "CN Smart Tech",
       "id": 2
-    },
-    {
-      "nombre": "Lucas Marte",
-      "telefono": "8094343546",
-      "email": "lucas@gmail.com",
-      "empresa": "CN Households",
-      "id": 3
-    },
-    {
-      "nombre": "Miguel",
-      "email": "correo@mail.com",
-      "telefono": "86594654654",
-      "empresa": "CN Know Me",
-      "id": 4
     }
   ]
 }
