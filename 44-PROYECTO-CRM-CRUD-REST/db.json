@@ -1,18 +1,25 @@
 {
   "clientes": [
     {
-      "nombre": "Cesario Nivar",
-      "email": "cesario@gmail.com",
-      "telefono": "8094562510",
+      "nombre": "Cesario Nivar De Jesús",
+      "email": "cesarionivar@gmail.com",
       "empresa": "CN Smart Tech",
+      "telefono": "8094562510",
       "id": 1
     },
     {
-      "nombre": "Josue Nivar",
-      "email": "josue@gmail.com",
-      "telefono": "80239543421",
+      "nombre": "Josue Nivar De Jesús",
+      "email": "josuenivar@gmail.com",
       "empresa": "CN Smart Tech",
+      "telefono": "80239543421",
       "id": 2
+    },
+    {
+      "nombre": "Cristina De Jesús",
+      "email": "thecristina@gmail.com",
+      "empresa": "CN Smart Tech",
+      "telefono": "8290139534",
+      "id": 3
     }
   ]
 }

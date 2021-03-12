@@ -52,3 +52,27 @@ export const obtenerCliente = async id => {
         console.log(error);
     }
 }
+
+export const editarCliente = async cliente => {
+    const { id, nombre, email, empresa, telefono } = cliente;
+    try {
+        await fetch(`${url}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({
+                nombre,
+                email,
+                empresa,
+                telefono
+            })
+        });
+       
+        window.location.href = 'index.html';
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}

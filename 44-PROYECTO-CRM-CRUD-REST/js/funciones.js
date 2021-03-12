@@ -18,3 +18,8 @@ export function mostrarAlerta(mensaje) {
         }, 3000);
     }
 }
+
+    
+export function validar(obj)  {
+    return !Object.values(obj).every( input => input !== '');
+}
