@@ -37,7 +37,17 @@ export const eliminarCliente =  async idCliente => {
         await fetch(`${url}/${idCliente}`, {
             method: 'DELETE'
         });
-        
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const obtenerCliente = async id => {
+    try {
+        const respuesta = await fetch(`${url}/${id}`);
+        const cliente = await respuesta.json();
+        return cliente;
     } catch (error) {
         console.log(error);
     }
