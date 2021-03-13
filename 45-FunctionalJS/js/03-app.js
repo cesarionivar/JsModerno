@@ -24,3 +24,4 @@ const result = carrito.filter(mayor400);
 
 console.log(result);
 
+console.log(carrito);
