@@ -10,9 +10,10 @@ const carrito = [
 ];
 
 
+const nombresProductos = carrito.map(producto => producto.nombre);
 
-const obtenerNombres = producto => producto.nombre;
-const resultado = carrito.map(obtenerNombres);
+console.log(nombresProductos);
 
-console.log(resultado);
+const result = carrito.filter(producto => producto.precio > 400);
+console.log(result);
 console.log(carrito);
