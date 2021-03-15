@@ -1,9 +1,25 @@
+const nombreCache = 'apv-v1';
+const archivos = [
+    './',
+    './index.html',
+    './css/bootstrap.css',
+    './css/styles.css',
+    './js/app.js',
+    './js/apv.js'
+];
+
 
 // Cuando se instala el Service Worker
 self.addEventListener('install', e => {
     console.log('Instalando el Service Worker');
 
-    console.log(e);
+    e.waitUntil(
+        caches.open(nombreCache)
+            .then( cache => {
+                console.log('Cacheando');
+                cache.addAll(archivos)
+            })
+    );
 
 });
 
