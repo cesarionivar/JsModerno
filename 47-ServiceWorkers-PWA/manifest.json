@@ -3,7 +3,7 @@
     "short_name": "APV",
     "start_url": "/index.html",
     "display": "standalone",
-    "background-color": "#D41872",
+    "background_color": "#D41872",
     "theme_color": "#D41872",
     "orientation": "portrait",
     "icons": [
