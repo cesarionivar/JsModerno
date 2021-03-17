@@ -1,3 +1,5 @@
+// Obfuscar el codigo -> https://javascript2img.com/
+
 const criptomonedasSelect = document.querySelector('#criptomonedas');
 const monedaSelect = document.querySelector('#moneda');
 const formulario = document.querySelector('#formulario');
