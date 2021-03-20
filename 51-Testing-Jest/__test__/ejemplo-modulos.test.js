@@ -1,5 +1,9 @@
-import { suma } from '../js/funciones.js';
+// import { suma } from '../js/funciones.js'; 
 
+
+function suma(a, b) {
+    return a + b;
+}
 
 
 describe('Suma de 2 números', () => {
