@@ -6,8 +6,30 @@ Citas {
     Object {
       "fecha": "20-03-2021",
       "hora": "01:28",
-      "id": 1616261677764,
+      "id": 1616262904558,
       "mascota": "Hook",
+      "propietario": "Cesario",
+      "sintomas": "Solo duerme",
+      "telefono": "80945264120",
+    },
+  ],
+}
+`;
+
+exports[`Probar la clase de citas Elliminar cita 1`] = `
+Citas {
+  "citas": Array [],
+}
+`;
+
+exports[`Probar la clase de citas actualiazr cita 1`] = `
+Citas {
+  "citas": Array [
+    Object {
+      "fecha": "20-03-2021",
+      "hora": "01:28",
+      "id": 1616262904558,
+      "mascota": "Redux",
       "propietario": "Cesario",
       "sintomas": "Solo duerme",
       "telefono": "80945264120",
