@@ -1,0 +1,15 @@
+{
+  "name": "52-Testing-Cypress",
+  "version": "1.0.0",
+  "description": "Aprendiendo CyPress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cesario Nivar <ing.cesarionivar@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^6.8.0"
+  }
+}
