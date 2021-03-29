@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Llena los campos para una nueva cita y la muestra', () => {
+describe('Llena los campos para una nueva cita y la edita', () => {
 
     it('Campos nueva cita', () => {
 
@@ -40,4 +40,24 @@ describe('Llena los campos para una nueva cita y la muestra', () => {
         
 
     });
+
+    it('Edita la cita', () => {
+
+        cy.get('[data-cy="btn-editar"]')
+            .click();
+
+        cy.get('[data-cy="mascota-input"]')
+            .clear()
+            .type('NUEVO HOOK');
+
+        cy.get('[data-cy="submit"]')
+            .click();
+
+        cy.get('[data-cy="alerta"]')
+            .invoke('text')
+            .should('equal', 'Guardado Correctamente');
+
+
+    });
+
 });
