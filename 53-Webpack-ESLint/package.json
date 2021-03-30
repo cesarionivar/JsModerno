@@ -6,7 +6,8 @@
   "scripts": {
     "babel": "babel entrada.js --out-file salida.js --presets=@babel/preset-env",
     "webpack": "webpack",
-    "dev": "webpack serve --open"
+    "dev": "concurrently --kill-other \"npm run watch\" \"webpack serve --open\"",
+    "watch": "webpack --watch"
   },
   "author": "Cesario Nivar <ing.cesarionivar@gmail.com>",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "babel-loader": "^8.2.2",
+    "concurrently": "^6.0.0",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"

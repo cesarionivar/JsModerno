@@ -4,4 +4,4 @@ import App from './classes/App.js';
 const app = new App();
 
 
-console.log('Desde consola');
+console.log('ok');
