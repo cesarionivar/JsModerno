@@ -1,22 +1,25 @@
 import React, { Fragment, useState } from "react";
+import { calcularTotal } from "../helpers";
 
-const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
-
+const Formulario = ({ cantidad, guardarCantidad, plazo, guardarPlazo }) => {
   // Definir state
-  const [error, guardarError] = useState(false)
+  const [error, guardarError] = useState(false);
 
   // Cuando el usuario hace submit
-  const calcularPrestamo = e => {
+  const calcularPrestamo = (e) => {
     e.preventDefault();
 
-    // Validar 
-    if(cantidad === 0 || plazo === '') {
+    // Validar
+    if (cantidad === 0 || plazo === "") {
       guardarError(true);
     }
-
+    // Eliminar el error previo
     guardarError(false);
 
-  }
+    // Realizar cotizacion
+    const total = calcularTotal(cantidad, plazo);
+    console.log(total);
+  };
 
   return (
     <Fragment>
@@ -28,14 +31,14 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
               className="u-full-width"
               type="number"
               placeholder="Ejemplo: 3000"
-              onChange={ e => guardarCantidad( parseInt(e.target.value) ) }
+              onChange={(e) => guardarCantidad(parseInt(e.target.value))}
             />
           </div>
           <div>
             <label>Plazo para Pagar</label>
-            <select 
+            <select
               className="u-full-width"
-              onChange={e => parseInt(guardarPlazo(e.target.value) )}
+              onChange={(e) => parseInt(guardarPlazo(e.target.value))}
             >
               <option value="">Seleccionar</option>
               <option value="3">3 meses</option>
@@ -53,8 +56,9 @@ const Formulario = ({cantidad, guardarCantidad, plazo, guardarPlazo}) => {
           </div>
         </div>
       </form>
-      {(error) ? <p className="error">Todos los campos son obligatorios</p> : null }
-      
+      {error ? (
+        <p className="error">Todos los campos son obligatorios</p>
+      ) : null}
     </Fragment>
   );
 };
