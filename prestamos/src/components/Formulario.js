@@ -7,7 +7,6 @@ const Formulario = (props) => {
     guardarCantidad,
     plazo,
     guardarPlazo,
-    total,
     guardarTotal,
     guardarCargando,
   } = props;
