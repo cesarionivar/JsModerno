@@ -8,7 +8,7 @@ class App {
   constructor() {
     this.initApp();
   }
-  
+
   initApp() {
     mascotaInput.addEventListener('change', datosCita);
     propietarioInput.addEventListener('change', datosCita);
