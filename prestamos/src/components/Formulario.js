@@ -19,7 +19,7 @@ const Formulario = (props) => {
     guardarError(false);
 
     // Realizar cotizacion
-    total = calcularTotal(cantidad, plazo);
+    const total = calcularTotal(cantidad, plazo);
     
     // Una vez calculado guardar el total
     guardarTotal(total);

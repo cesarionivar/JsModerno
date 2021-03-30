@@ -1,18 +1,25 @@
-import React, { Fragment, useState } from 'react';
-import Header from './components/Header';
-import Formulario from './components/Formulario';
+import React, { Fragment, useState } from "react";
+import Header from "./components/Header";
+import Formulario from "./components/Formulario";
+import Mensaje from "./components/Mensaje";
+import Resultado from "./components/Resultado";
 
 function App() {
   // Definir el state
   const [cantidad, guardarCantidad] = useState(0);
-  const [plazo, guardarPlazo] = useState('');
+  const [plazo, guardarPlazo] = useState("");
   const [total, guardarTotal] = useState(0);
+
+  let componente;
+  if (total === 0) {
+    componente = <Mensaje />;
+  } else {
+    componente = <Resultado total={total} plazo={plazo} cantidad={cantidad} />;
+  }
 
   return (
     <Fragment>
-      <Header 
-        titulo="Cotizador de Prestamos"
-      />
+      <Header titulo="Cotizador de Prestamos" />
       <div className="container">
         <Formulario
           cantidad={cantidad}
@@ -22,8 +29,7 @@ function App() {
           total={total}
           guardarTotal={guardarTotal}
         />
-
-        <p>Total a pagar: ${total}</p>
+        <div className="mensajes">{componente}</div>
       </div>
     </Fragment>
   );
