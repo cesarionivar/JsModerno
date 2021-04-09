@@ -6,10 +6,7 @@ router.get('/', (req, res) => { // req - lo que enviamos : res - lo que express 
   res.send('Inicio');
 });
 router.get('/nosotros', (req, res) => { // req - lo que enviamos : res - lo que express nos responde
-  res.send('Nosotros');
-});
-router.get('/contacto', (req, res) => { // req - lo que enviamos : res - lo que express nos responde
-  res.send('Contacto');
+  res.render('nosotros');
 });
 
 export default router;
