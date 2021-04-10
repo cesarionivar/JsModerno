@@ -3,7 +3,8 @@ import { Testimonial } from '../models/Testimoniales.js';
 
 const paginaInicio = (req, res) => { // req - lo que enviamos : res - lo que express nos responde
   res.render('inicio', {
-    pagina: 'Inicio'
+    pagina: 'Inicio',
+    clase: 'home'
   });
 }
 
