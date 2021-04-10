@@ -16,5 +16,19 @@ block contenido
 
       .col-md-6
         img(src="/img/inicio_nosotros.jpg", alt="Imagen Nosotros", class="img-fluid")
-        
+
     include ./layout/bloque_viajes.pug
+
+  .descuento 
+    .container
+      .row 
+        .col-md-6 
+          .contenido  
+            h3 5% de Descuento 
+            p.titulo Viaje a Canada 
+            p.fecha 20 de Marzo de 2022 - 28 de Marzo de 202
+            p.precio $2,500 USD
+
+  .container 
+    h2.mt-5.text-center Testimoniales
+    include ./layout/bloque_testimoniales.pug
