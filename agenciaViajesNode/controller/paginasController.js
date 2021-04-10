@@ -14,13 +14,18 @@ const paginaNosotros = (req, res) => {
 
 const paginaViajes = async (req, res) => { 
   // Consultar BD
-  const viajes = await Viaje.findAll();
-
-  console.log(viajes);
-  res.render('viajes', {
-    pagina: 'Próximos viajes',
-    viajes,
-  });
+  try {
+    const viajes = await Viaje.findAll();
+  
+    console.log(viajes);
+    res.render('viajes', {
+      pagina: 'Próximos viajes',
+      viajes,
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const paginaTestimoniales = (req, res) => { 
@@ -29,9 +34,28 @@ const paginaTestimoniales = (req, res) => {
   });
 }
 
+// Muestra un viaje por su slug
+const paginaDetalleViaje = async (req, res) => {
+
+  const { slug } = req.params;
+
+  try {
+    const viaje = await Viaje.findOne({ where: { slug } });
+
+    res.render('viaje', {
+      pagina: 'Información Viaje',
+      viaje
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export {
   paginaInicio,
   paginaNosotros,
   paginaViajes,
-  paginaTestimoniales
+  paginaTestimoniales,
+  paginaDetalleViaje
 }
